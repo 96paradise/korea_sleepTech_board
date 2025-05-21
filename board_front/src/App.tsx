@@ -1,4 +1,7 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import SignUp from './views/auth/SignUp'
+import SignIn from './views/auth/SignIn'
 
 //! 프로젝트 기초 환경 설정
 // 1. 외부 라이브러리 설치 (의존성 설치)
@@ -12,16 +15,19 @@ import './App.css'
 // 3. root 경로의 index.tsx에서 BrowserRouter 등록
 
 // 4. 폴더 구조 생성
-// assets, apis(ts), components(tsx), constants(ts), layouts(tsx), stores(ts), styles(ts), types(ts), views(tsx)
+// assets, apis(ts), components(tsx), constants(ts), layouts(tsx)
+// , stores(ts), styles(ts), types(ts), views(tsx)
 
 // : ts - export const tmp = '';
 // : tsx - rfce(함수형 컴포넌트 생성)
 
 function App() {
-
   return (
     <>
-      
+      <Routes>
+        <Route path='/auth/sign-up' element={<SignUp />} />
+        <Route path='/auth/sign-in' element={<SignIn />} />
+      </Routes>
     </>
   )
 }
